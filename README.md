@@ -92,8 +92,8 @@ To implement the concept of Clean Architecture and ~~Domain-Driven Design~~ Feat
 
 ### main.ts
 
-- In this file, you initialize dependencies, injections, and anything required to start and run your application.
-- You can use the command `tsc && tsc-alias && node ./dist/main.js` or `make start` to run your application.
+- In this file, you initialize dependencies, injections, and anything required to start and run your application
+- You can use the command `tsc && tsc-alias && node ./dist/main.js` or `make start` to run your application
 
 ### domain
 
@@ -110,7 +110,7 @@ To implement the concept of Clean Architecture and ~~Domain-Driven Design~~ Feat
 - Please prioritize **Feature-Driven Design**, ensuring that features can be easily adapted and seamlessly integrated and imported into different projects
 - If another **Feature** imports anything from this location (the current **Feature**), and you want the current **Feature** to be
   accessible through the `importFeature` or `exportFeature` command without the risk of missing package errors, **DON'T FORGET** to include them in the `dependency.json` file
-- The `dependency.json` is **OPTIONAL**, and **ONLY USEFUL WHEN** you use the `importFeature` command. It serves to define
+- The `dependency.json` is **OPTIONAL**, and **ONLY USEFUL WHEN** you use the `importFeature` or `exportFeature` command. It serves to define
   the **Feature** dependencies and avoids possible missing package errors
 - A standard **Feature** comprises the following parts: `delivery`, `repositories`, `usecases` and `utility`
   - **delivery**
