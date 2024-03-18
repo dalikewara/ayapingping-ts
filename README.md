@@ -90,7 +90,7 @@ Simply start working on your project and make changes.
 
 To implement the concept of Clean Architecture and ~~Domain-Driven Design~~ Feature-Driven Design, and to keep them understandable, we structure the project like this:
 
-### main.go
+### main.ts
 
 - In this file, you initialize dependencies, injections, and anything required to start and run your application.
 - You can use the command `tsc && tsc-alias && node ./dist/main.js` or `make start` to run your application.
