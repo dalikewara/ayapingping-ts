@@ -6,7 +6,7 @@
   "license": "",
   "main": "./dist/main.js",
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "tsc || ./node_modules/.bin/tsc && tsc-alias || ./node_modules/.bin/tsc-alias",
     "start": "node ./dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
