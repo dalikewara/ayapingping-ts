@@ -1,0 +1,41 @@
+{
+  "name": "ayapingping-ts",
+  "version": "4.5.0",
+  "description": "ayapingping-ts generates standard project structure to build applications in NodeJS-TypeScript that follow Clean Architecture and Feature-Driven Design concept",
+  "author": "Dali Kewara",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalikewara/ayapingping-ts.git"
+  },
+  "keywords": [
+    "typescript",
+    "ayapingping",
+    "ayapingping-ts",
+    "framework",
+    "structure",
+    "design",
+    "feature",
+    "project",
+    "clean-architecture",
+    "feature-driven-design",
+    "domain-driven-design"
+  ],
+  "contributors": [
+    {
+      "name": "Dali Kewara",
+      "email": "dalikewara@gmail.com",
+      "url": "https://www.dalikewara.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/dalikewara/ayapingping-ts/issues"
+  },
+  "homepage": "https://github.com/dalikewara/ayapingping-ts",
+  "main": "./main.js",
+  "bin": "./main.js",
+  "scripts": {
+    "start": "node ./main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
