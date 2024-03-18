@@ -6,8 +6,8 @@ const https = require('https');
 const child_process = require('child_process');
 
 const name = "AyaPingPing (TypeScript)";
-const version = "v4.5.0";
-const language = "Golang";
+const version = "v4.5.1";
+const language = "TypeScript";
 const generatorUrl = "https://raw.githubusercontent.com/dalikewara/ayapingping-sh/master/main_v4.sh";
 const generatorFile = "main.sh";
 const generatorFileTmp = "main_tmp.sh";
