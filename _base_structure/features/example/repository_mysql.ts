@@ -1,19 +1,18 @@
-import {Example, FindExampleByIDRepository} from '@domain/example';
-import {Pool} from 'mysql2';
+import {Example, ExampleRepository} from '@domain/example';
 
-export class FindExampleByIDMySQL implements FindExampleByIDRepository {
-    private readonly db: Pool;
+export class RepositoryMySQL implements ExampleRepository {
+    private readonly db: null;
 
-    constructor(db: Pool) {
+    constructor(db: null) {
         this.db = db;
     }
 
-    exec(id: number): [Example | null, Error | null] {
+    findByID(id: number): [Example | null, Error | null] {
         try {
             let example = new Example({
                 id:id,
                 username: 'dalikewara',
-                password: 'password'
+                password: 'admin123'
             });
 
             example.setCreatedAtNow();
