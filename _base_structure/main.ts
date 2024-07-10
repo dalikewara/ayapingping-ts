@@ -1,26 +1,7 @@
-import {parseEnv} from '@common/env'
-import {connectMySQL} from '@common/mysql'
 import {expressServer} from '@common/expressServer'
-import {FindExampleByIDMySQL} from '@features/example/repositories/findExampleByID/mysql'
-import {GetExampleV1} from '@features/example/usecases/getExample/v1'
-import {ExampleGetV1Express} from "@features/example/delivery/handlers/exampleGet/v1_express"
-
-
-// Parse env
-
-const [envCfg, envCfgErr] = parseEnv()
-
-if (envCfgErr instanceof Error) {
-    // throw envCfgErr
-}
-
-// Database connection
-
-const [mysqlDB, mysqlDBErr] = connectMySQL(envCfg!.mysqlHost, parseInt(envCfg!.mysqlPort), envCfg!.mysqlUser, envCfg!.mysqlPass, envCfg!.mysqlDBName)
-
-if (mysqlDBErr instanceof Error) {
-    // throw mysqlDBErr
-}
+import {RepositoryMySQL as ExampleRepositoryMySQL} from '@features/example/repository_mysql'
+import {UseCaseV1 as ExampleUseCaseV1} from '@features/example/usecase_v1'
+import {HttpServiceExpress as ExampleHttpServiceExpress} from '@features/example/httpService_express'
 
 // Http server initialization
 
@@ -32,18 +13,22 @@ if (expressSrvErr instanceof Error) {
 
 // Repositories
 
-const findExampleByIDMySQL = new FindExampleByIDMySQL(mysqlDB!)
+const exampleRepository = new ExampleRepositoryMySQL(null)
 
 // Use cases
 
-const getExampleV1 = new GetExampleV1(findExampleByIDMySQL)
+const exampleUseCase = new ExampleUseCaseV1(exampleRepository)
 
-// Register handlers
+// Services
 
-new ExampleGetV1Express(expressSrv!, getExampleV1).registerHandler('GET', '/api/v1/example/get')
+const exampleHttpServiceExpress = new ExampleHttpServiceExpress(expressSrv!, exampleUseCase)
+
+// Service handlers
+
+exampleHttpServiceExpress.exampleDetail("GET", "/example")
 
 // Start & listen application
 
-expressSrv!.listen(envCfg!.restPort, function()  {
-    console.log('Application is running on port: ' + envCfg!.restPort)
+expressSrv!.listen(8080, function()  {
+    console.log('Application is running on port: ' + 8080)
 })
