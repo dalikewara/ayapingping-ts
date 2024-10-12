@@ -1,13 +1,13 @@
 {
   "domains": [
-    "example.ts",
-    "response.ts"
+    "example.ts"
   ],
   "features": [],
   "commons": [
     "expressServer.ts",
     "validateUsername.ts",
-    "timeNow.ts"
+    "timeNow.ts",
+    "response.ts"
   ],
   "externals": [
     "express@4.18.3"
