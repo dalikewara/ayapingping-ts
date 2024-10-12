@@ -1,6 +1,6 @@
 import {Express, Request, Response} from 'express';
 import {ExampleHttpService, ExampleUseCase} from '@domain/example';
-import {newResponseJSONSuccess, newResponseJSONError} from '@domain/response';
+import {newResponseJSONSuccess, newResponseJSONError} from '@common/response';
 
 export class HttpServiceExpress implements ExampleHttpService {
     private readonly client: Express;
@@ -11,7 +11,7 @@ export class HttpServiceExpress implements ExampleHttpService {
         this.exampleUseCase = exampleUseCase;
     }
 
-    exampleDetail(method: string, endpoint: string): void {
+    detail(method: string, endpoint: string): void {
         const exampleUseCase = this.exampleUseCase;
 
         // @ts-ignore

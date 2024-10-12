@@ -10,7 +10,7 @@ export interface ExampleUseCase {
 }
 
 export interface ExampleHttpService {
-    exampleDetail(method: string, endpoint: string): void;
+    detail(method: string, endpoint: string): void;
 }
 
 export class Example {

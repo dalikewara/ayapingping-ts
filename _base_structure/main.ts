@@ -25,7 +25,7 @@ const exampleHttpServiceExpress = new ExampleHttpServiceExpress(expressSrv!, exa
 
 // Service handlers
 
-exampleHttpServiceExpress.exampleDetail("GET", "/example")
+exampleHttpServiceExpress.detail("GET", "/example")
 
 // Start & listen application
 
