@@ -1,5 +1,7 @@
 # ayapingping-ts
 
+> **ayapingping-ts** has been rebranded to **[uwais](https://github.com/dalikewara/uwais)**. This repository will stay up forever and won’t be deleted, so you can still use it if needed. However, there won’t be any more updates here since all future updates will be worked on in the new **[uwais](https://github.com/dalikewara/uwais)** repository.
+
 ![npm package](https://nodei.co/npm/ayapingping-ts.png?downloads=true&downloadRank=true&stars=true)
 
 ![version](https://img.shields.io/npm/v/ayapingping-ts.svg?style=flat)
